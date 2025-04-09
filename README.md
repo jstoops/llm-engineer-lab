@@ -44,3 +44,5 @@ Start environment after inital setup:
 - [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb)
 - [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb)
 - [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/tech-questions.ipynb)
+- [4 AIs Having a Conversation](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb)
+- [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb)
