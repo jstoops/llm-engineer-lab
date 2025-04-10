@@ -13,12 +13,13 @@ Used to quickly prototype ideas before turning them into applications in python 
 
     conda env create -f environment.yml
 5. Download and install Ollama for open-source LLMs: https://ollama.com/
-6. Create a .env file in project root with key OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY and DEEPSEEK_API_KEY
+6. Create a .env file in project root with key OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, etc.
 7. Create closed-source LLM keys and set to secret key values in .env
     - OpenAI API for GPT4o: https://platform.openai.com/settings/organization/api-keys
     - Google AI for Gemini API: https://ai.google.dev/gemini-api/docs
     - Anthropic for Claude Sonnet: https://console.anthropic.com/settings/keys
     - DeepSeek: https://platform.deepseek.com/api_keys
+    - HuggingFace: https://huggingface.co/settings/tokens
 8. Activate environment:
 
     conda activate llms-eng
@@ -38,6 +39,25 @@ Start environment after inital setup:
 4. Open Jupyter environment:
 
     jupyter lab
+
+## Audio Setup
+
+1. Download FFmpeg from the official website: https://ffmpeg.org/download.html
+2. Extract the downloaded files to a location on your computer (e.g., C:\ffmpeg)
+3. Add the FFmpeg bin folder to your system PATH:
+    1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
+    2. Click on 'Advanced system settings'
+    3. Click on 'Environment Variables'
+    4. Under 'System variables', find and edit 'Path'
+    5. Add a new entry with the path to your FFmpeg bin folder (e.g., C:\ffmpeg\bin)
+4. Restart your command prompt, and within Jupyter Lab do Kernel -> Restart kernel, to pick up the changes
+5. Open a new command prompt and run this to make sure it's installed OK ffmpeg -version
+
+Check all required packages installed in JupyterLab:
+
+    !ffmpeg -version
+    !ffprobe -version
+    !ffplay -version
 
 # Lab Projects
 
