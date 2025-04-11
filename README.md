@@ -5,6 +5,8 @@ Used to quickly prototype ideas before turning them into applications in python 
 
 # Data Science Environment Setup
 
+## Anaconda and JupyterLab
+
 1. Clone the repo
     git clone https://github.com/jstoops/llm-engineer-lab.git
 2. Download and install Anaconda: https://www.anaconda.com/download
@@ -59,6 +61,16 @@ Check all required packages installed in JupyterLab:
     !ffprobe -version
     !ffplay -version
 
+## Google Colab
+
+1. Go to [Google Colab](https://colab.research.google.com/)
+2. Click File->New notebook in Drive
+3. From top right select downarrow next to Connect->Change runtime type, e.g. Python 3 on a CPU with High CPU RAM toggled off for cheapest option
+4. Select Connect then once connected click on RAM & Disk to view Resources
+5. Select folder icon on left to open file browser on local disk (temporary and wiped once finished using box)
+6. Select key icon from left menu to open secrets for environment variables and toggle on the keys associated with the notebook
+7. Click Share to share the notebook on Google Drive
+
 # Lab Projects
 
 - [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb)
@@ -66,3 +78,8 @@ Check all required packages installed in JupyterLab:
 - [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/tech-questions.ipynb)
 - [4 AIs Having a Conversation](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb)
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb)
+
+# HugglingFace Library Experiements
+
+- [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb)
+- [Tokenizers](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/tokenizers.ipynb)
