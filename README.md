@@ -87,4 +87,4 @@ Check all required packages installed in JupyterLab:
 - [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb)
 - [Tokenizers](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/tokenizers.ipynb)
 - [Models](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/models.ipynb)
-
+- [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/gpu-info.ipynb)
