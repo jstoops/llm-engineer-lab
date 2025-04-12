@@ -78,8 +78,11 @@ Check all required packages installed in JupyterLab:
 - [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/tech-questions.ipynb)
 - [4 AIs Having a Conversation](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb)
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb)
+- [Meeting Minutes From Audio File](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb)
 
 # HugglingFace Library Experiments
 
 - [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb)
 - [Tokenizers](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/tokenizers.ipynb)
+- [Models](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/models.ipynb)
+
