@@ -15,13 +15,14 @@ Used to quickly prototype ideas before turning them into applications in python 
 
     conda env create -f environment.yml
 5. Download and install Ollama for open-source LLMs: https://ollama.com/
-6. Create a .env file in project root with key OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, etc.
+6. Create a .env file in project root with key OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
 7. Create closed-source LLM keys and set to secret key values in .env
     - OpenAI API for GPT4o: https://platform.openai.com/settings/organization/api-keys
     - Google AI for Gemini API: https://ai.google.dev/gemini-api/docs
     - Anthropic for Claude Sonnet: https://console.anthropic.com/settings/keys
     - DeepSeek: https://platform.deepseek.com/api_keys
     - HuggingFace: https://huggingface.co/settings/tokens
+    - LlamaCloud: Go to https://cloud.llamaindex.ai/ then API Keys
 8. Activate environment:
 
     conda activate llms-eng
@@ -79,6 +80,7 @@ Check all required packages installed in JupyterLab:
 - [4 AIs Having a Conversation](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb)
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb)
 - [Meeting Minutes From Audio File](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb)
+- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/llama-parse.ipynb)
 
 # HugglingFace Library Experiments
 
