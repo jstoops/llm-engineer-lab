@@ -1,7 +1,7 @@
 My LLM Engineering Lab
 ======================
 
-Used to quickly prototype ideas before turning them into applications in python using Anaconda and JupyterLab.
+Used to quickly prototype ideas before turning them into applications in python using Anaconda, JupyterLab, and Google Colab.
 
 # Data Science Environment Setup
 
@@ -103,8 +103,8 @@ Check all required packages installed in JupyterLab:
 
 # Tools
 
-- [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/tech-questions.ipynb)
-- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb)
+- [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/tech-questions.ipynb): takes a technical question, and responds with an explanation. Optimized for LLM and pythin code expertise.
+- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb): uses LlamaParse to convert PDFs and other document types to markdown.
 - [Improve Code Performance](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/code-converter.ipynb): uses Frontier and open-source models to generate high performance C++ code from Python code.
 - [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/gpu-info.ipynb): code to display information about the GPUs that are currently running on a Notebook in Colab.
 
