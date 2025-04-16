@@ -92,6 +92,7 @@ Check all required packages installed in JupyterLab:
 - [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb): Give it a URL, and it will respond with a summary.
 - [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb): a product that builds a Brochure for a company to be used for prospective clients, investors and potential recruits when provided a company name and their primary website.
 - [AIs Having a Chat](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb): an adversarial conversation between Chatbots.
+- [Store Chatbot](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/chatbot.ipynb): a conversational AI with multi-shot prompting.
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb): an AI Customer Support assistant for an Airline.
 - [Meeting Minutes Program](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb): generate meeting minutes from an audio recording of a meeting on your Google Drive.
 
