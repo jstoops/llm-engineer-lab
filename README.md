@@ -62,7 +62,7 @@ Check all required packages installed in JupyterLab:
     !ffprobe -version
     !ffplay -version
 
-## Google Colab
+## Google Colab Setup
 
 1. Go to [Google Colab](https://colab.research.google.com/)
 2. Click File->New notebook in Drive
@@ -72,19 +72,104 @@ Check all required packages installed in JupyterLab:
 6. Select key icon from left menu to open secrets for environment variables and toggle on the keys associated with the notebook
 7. Click Share to share the notebook on Google Drive
 
+## Clang Setup
+
+1. Download Visual Studio 2022 Community edition: https://visualstudio.microsoft.com/downloads/
+2. Run VisualStudioSetup.exe and select Individual components
+3. Under _Compilers, buils tools, and runtimes_ check `C++ Clang Compiler for Windows`
+4. Click install
+5. Add the Clang bin folder to your system PATH:
+    1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
+    2. Click on 'Advanced system settings'
+    3. Click on 'Environment Variables'
+    4. Under 'System variables', find and edit 'Path'
+    5. Add a new entry with the path to your Clang bin folder (e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin)
+6. Restart your command prompt, and within Jupyter Lab do Kernel -> Restart kernel, to pick up the changes
+5. Open a new command prompt and run this to make sure it's installed OK clang --version
+
 # Lab Projects
 
-- [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb)
-- [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb)
-- [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/tech-questions.ipynb)
-- [4 AIs Having a Conversation](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb)
-- [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb)
-- [Meeting Minutes From Audio File](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb)
-- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/llama-parse.ipynb)
+- [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb): Give it a URL, and it will respond with a summary.
+- [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb): a product that builds a Brochure for a company to be used for prospective clients, investors and potential recruits when provided a company name and their primary website.
+- [AIs Having a Chat](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb): an adversarial conversation between Chatbots.
+- [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb): an AI Customer Support assistant for an Airline.
+- [Meeting Minutes Program](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb): generate meeting minutes from an audio recording of a meeting on your Google Drive.
 
 # HugglingFace Library Experiments
 
-- [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb)
-- [Tokenizers](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/tokenizers.ipynb)
-- [Models](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/models.ipynb)
-- [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/gpu-info.ipynb)
+- [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb): exploring the HuggingFace High Level API.
+- [Tokenizers](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/tokenizers.ipynb): using different Tokenizers.
+- [Models](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/models.ipynb): exploring the heart of the transformers library.
+
+# Tools
+
+- [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/tech-questions.ipynb)
+- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb)
+- [Improve Code Performance](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/code-converter.ipynb): uses Frontier and open-source models to generate high performance C++ code from Python code.
+- [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/gpu-info.ipynb): code to display information about the GPUs that are currently running on a Notebook in Colab.
+
+# Skills Developed
+
+- Confidently use the OpenAI & Ollama API including streaming with markdown and JSON generation
+- Use the API for OpenAPI's GPT, Anthropic's Claude and Google's Gemini
+- Constrast and contrast the leading Frontier LLMs
+- Write code that interacts between multiple Frontier LLMs
+- Describe transformers, tokens, context windows, API costs, etc
+- Confidently code with APIs for Frontier Models GPT, Claude and Gemini
+
+## Multi-Model AI Chatbot Assistant Development
+
+Build multi-modal AI Chatbot Assistants with UI, Tools, and Agents for enhanced expertise:
+- Implement customer support assistants with Chat UIs
+- Create data science UIs in Gradio
+- Provide context in a prompt including multi-shot prompting
+- Use Agents to carry out sequential activities
+- Create Function-calling Tools
+- Implement multi-modal AI Assistants with Agents and Tools including an interactive UI
+
+## HuggingFace Libraries
+
+Navigate the HuggingPlace platform, run code in Colab and use HuggingFace pipelines, tokenizers and models:
+- Find Models, Datasets and Spaces on the HuggingFace platform
+- Use Google Colab to code on a high spec GPU runtime
+- Use HuggingFace pipelines for a wide variety of inference tasks
+- Use pipelines to generate text, images and audio
+- Create tokenizers for models
+- Translate between text and tokens
+- Understand special tokens and chat templates
+- Work with HuggingFace lower level APIs
+- Use HuggingFace models to generate text
+- Compare the results across 5 open source models
+- Confidently work with tokenizers and models
+- Run inference on open-source models
+- Implement an LLM solution combining Frontier and Open-source models
+- Build solutions with open-source LLMs with HuggingFace Transformers
+
+## Comparing Open and Closed Source Models
+
+Compare LLMs to identify the right one for the task at hand:
+- Navigate the most useful leaderboards and arenas to evaluate LLMs
+- Compare LLMs based on their basic attributes and benchmarks
+- Give real-world use cases of LLMs solving commercial problems
+- Confidently choose the right LLM for projects, backed by metrics
+
+## Leveraging Frontier Models for High-Performance Code Generation in C++
+
+Build a product that converts Python code to C++ for performance:
+- Assess Frontier and Open-Source models for coding ability
+- Use Frontier and open-source models to generate code
+- Implement solutions that use Frontier and Open-source LLMs to generate code
+- Use HuggingFace inference endpoints to deploy models on AWS, Azure, and GCP
+
+## Evaluating LLM Code Generation Performance
+
+Evaluating LLM performance by looking at Model-Centric vs Business-Centric metrics:
+- Compare performance of open-source and closed source models
+- Describe different commercial use cases for code generation
+- Build solutions that use code generation for diverse tasks
+
+## Retrieval Augmented Generation (RAG)
+
+- Explain the idea behind RAG
+- Walk through the high level flow for adding expertise to queries
+- Implement a version of RAG without vector databases
