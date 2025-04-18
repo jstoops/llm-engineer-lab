@@ -95,6 +95,7 @@ Check all required packages installed in JupyterLab:
 - [Store Chatbot](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/chatbot.ipynb): a conversational AI with multi-shot prompting.
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb): an AI Customer Support assistant for an Airline.
 - [Meeting Minutes Program](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb): generate meeting minutes from an audio recording of a meeting on your Google Drive.
+- [Expert Knowledge Worker](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/rag-knowledge-worker.ipynb): embeds documents in a vector datastore and uses use RAG (Retrieval Augmented Generation) to ensure question/answering assistant is highly accuracy.
 
 # HugglingFace Library Experiments
 
@@ -174,3 +175,18 @@ Evaluating LLM performance by looking at Model-Centric vs Business-Centric metri
 - Explain the idea behind RAG
 - Walk through the high level flow for adding expertise to queries
 - Implement a version of RAG without vector databases
+- Explain how RAG uses vector embeddings and vector datastores to add context to prompts, define LangChain and read / split Documents
+- Describe the LangChain framework, with benefits and limitations
+- Create and populate a Vector Database with the contents of a Knowledge Base
+- Use LangChain to read in a Knowledge Base of documents
+- Use LangChain to divide up documents into overlaping chunks
+- Convert chunks of text into Vectors using OpenAIEmbeddings
+- Store the Vectors in Chroma, a popular open-source Vector datastore
+- Visualize and explore Vectors in a Chroma Vector Datastore in 2D and 3D
+- Create a Conversation Chain in LangChain for a chat conversation with retrieval
+- Ask questions and receive answers demonstrating expert knowledge
+- Build a Knowledge Worker assistant with chat UI
+- Create a RAG Knowledge Worker using LangChain and Chroma
+- Familar with LangChain's declarative language LCEL
+- Understand how LangChain works behind the scenes
+- Debug and fix common issues with RAG
