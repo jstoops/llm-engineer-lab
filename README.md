@@ -95,7 +95,7 @@ Check all required packages installed in JupyterLab:
 - [Store Chatbot](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/chatbot.ipynb): a conversational AI with multi-shot prompting.
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb): an AI Customer Support assistant for an Airline.
 - [Meeting Minutes Program](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb): generate meeting minutes from an audio recording of a meeting on your Google Drive.
-- [Expert Knowledge Worker](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/rag-knowledge-worker.ipynb): embeds documents in a vector datastore and uses use RAG (Retrieval Augmented Generation) to ensure question/answering assistant is highly accuracy.
+- [Expert Knowledge Worker](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/rag-knowledge-worker.ipynb): embeds documents in a vector datastore and uses RAG (Retrieval Augmented Generation) to ensure question/answering assistant is highly accuracy.
 
 # HugglingFace Library Experiments
 
