@@ -14,6 +14,7 @@ Inspiration from these recommended courses and books:
 - [Lab Projects](#lab-projects)
 - [HugglingFace Library Experiments](#hf-lib-exp)
 - [Tools](#tools)
+- [Patterns](#patterns)
 - [Skills Developed](#skills)
 
 <a id="setup"></a>
@@ -102,6 +103,19 @@ Check all required packages installed in JupyterLab:
 5. Open a new command prompt and run this to make sure it's installed OK
 
     clang --version
+
+<a id="patterns"></a>
+# Patterns
+
+## FTI Design Pattern
+
+The feature/training/inference (FTI) architecture is the ML system pattern used as the core architecure in the LLM pipeline design. The FTI pipelines act as logical layers and this high-level architecture is language-, framework-, platform-, and inftrastructure agnostic.
+
+The FTI pattern is followed to compute the features, train the model, and make predictions using 3 or more pipelines that have each have a clearly defined scope and interface.
+
+The data and feature pipelines scales horizontally based on CPU and RAM load, the training pipeline scales vertically by adding more GPUs, and the inference pipeline sales horizontally based on the number of client requests.
+
+<img src="./content/FTI-Pipelines-Architecture.jpg" alt="Feature/training/inference (FTI) architecture" />
 
 <a id="lab-projects"></a>
 # Lab Projects
@@ -210,15 +224,3 @@ Evaluating LLM performance by looking at Model-Centric vs Business-Centric metri
 - Familar with LangChain's declarative language LCEL
 - Understand how LangChain works behind the scenes
 - Debug and fix common issues with RAG
-
-# Patterns
-
-## FTI Design Pattern
-
-The feature/training/inference (FTI) architecture is the ML system pattern used as the core architecure in the LLM pipeline design. The FTI pipelines act as logical layers and this high-level architecture is language-, framework-, platform-, and inftrastructure agnostic.
-
-The FTI pattern is followed to compute the features, train the model, and make predictions using 3 or more pipelines that have each have a clearly defined scope and interface.
-
-The data and feature pipelines scales horizontally based on CPU and RAM load, the training pipeline scales vertically by adding more GPUs, and the inference pipeline sales horizontally based on the number of client requests.
-
-<img src="./content/FTI-Pipelines-Architecture.jpg" alt="Feature/training/inference (FTI) architecture" />
