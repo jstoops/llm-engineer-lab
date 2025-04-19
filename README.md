@@ -3,6 +3,20 @@ My LLM Engineering Lab
 
 Used to quickly prototype ideas before turning them into applications in python using Anaconda, JupyterLab, and Google Colab.
 
+Inspiration from these recommended courses and books:
+- [LLM Engineering: Master AI, Large Language Models & Agents by Ed Donner](https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/)
+- [AI-Agents: Automation & Business with LangChain & LLM Apps by Arnold Oberleiter](https://www.udemy.com/course/ai-agents-automation-business-with-langchain-llm-apps/)
+- [LLM Engineer's Handbook by Paul Iusztin and Maxime Labonne](https://www.packtpub.com/en-us/product/llm-engineers-handbook-9781836200062)
+- [The Machine Learning Solutions Architect Handbook](https://www.packtpub.com/en-us/product/the-machine-learning-solutions-architect-handbook-9781805124825)
+
+**Table of content**
+- [Data Science Environment Setup](#setup)
+- [Lab Projects](#lab-projects)
+- [HugglingFace Library Experiments](#hf-lib-exp]
+- [Tools](#tools)
+- [Skills Developed](#skills)
+
+<a id="setup"></a>
 # Data Science Environment Setup
 
 ## Anaconda and JupyterLab
@@ -87,6 +101,7 @@ Check all required packages installed in JupyterLab:
 6. Restart your command prompt, and within Jupyter Lab do Kernel -> Restart kernel, to pick up the changes
 5. Open a new command prompt and run this to make sure it's installed OK clang --version
 
+<a id="lab-projects"></a>
 # Lab Projects
 
 - [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb): Give it a URL, and it will respond with a summary.
@@ -97,12 +112,14 @@ Check all required packages installed in JupyterLab:
 - [Meeting Minutes Program](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb): generate meeting minutes from an audio recording of a meeting on your Google Drive.
 - [Expert Knowledge Worker](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/rag-knowledge-worker.ipynb): embeds documents in a vector datastore and uses RAG (Retrieval Augmented Generation) to ensure question/answering assistant is highly accuracy.
 
+<a id="hf-lib-exp"></a>
 # HugglingFace Library Experiments
 
 - [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb): exploring the HuggingFace High Level API.
 - [Tokenizers](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/tokenizers.ipynb): using different Tokenizers.
 - [Models](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/models.ipynb): exploring the heart of the transformers library.
 
+<a id="tools"></a>
 # Tools
 
 - [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/tech-questions.ipynb): takes a technical question, and responds with an explanation. Optimized for LLM and pythin code expertise.
@@ -110,6 +127,7 @@ Check all required packages installed in JupyterLab:
 - [Improve Code Performance](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/code-converter.ipynb): uses Frontier and open-source models to generate high performance C++ code from Python code.
 - [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/gpu-info.ipynb): code to display information about the GPUs that are currently running on a Notebook in Colab.
 
+<a id="skills"></a>
 # Skills Developed
 
 - Confidently use the OpenAI & Ollama API including streaming with markdown and JSON generation
