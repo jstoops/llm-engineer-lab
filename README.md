@@ -12,7 +12,7 @@ Inspiration from these recommended courses and books:
 **Table of content**
 - [Data Science Environment Setup](#setup)
 - [Lab Projects](#lab-projects)
-- [HugglingFace Library Experiments](#hf-lib-exp]
+- [HugglingFace Library Experiments](#hf-lib-exp)
 - [Tools](#tools)
 - [Skills Developed](#skills)
 
