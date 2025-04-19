@@ -29,8 +29,8 @@ Inspiration from these recommended courses and books:
 
     conda env create -f environment.yml
 5. Download and install Ollama for open-source LLMs: https://ollama.com/
-6. Create a .env file in project root with key OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
-7. Create closed-source LLM keys and set to secret key values in .env
+6. Create a .env file in project root with keys: OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
+7. Create keys/tokens and set to secret key values in .env
     - OpenAI API for GPT4o: https://platform.openai.com/settings/organization/api-keys
     - Google AI for Gemini API: https://ai.google.dev/gemini-api/docs
     - Anthropic for Claude Sonnet: https://console.anthropic.com/settings/keys
@@ -90,7 +90,7 @@ Check all required packages installed in JupyterLab:
 
 1. Download Visual Studio 2022 Community edition: https://visualstudio.microsoft.com/downloads/
 2. Run VisualStudioSetup.exe and select Individual components
-3. Under _Compilers, buils tools, and runtimes_ check `C++ Clang Compiler for Windows`
+3. Under _Compilers, build tools, and runtimes_ check `C++ Clang Compiler for Windows`
 4. Click install
 5. Add the Clang bin folder to your system PATH:
     1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
@@ -99,7 +99,9 @@ Check all required packages installed in JupyterLab:
     4. Under 'System variables', find and edit 'Path'
     5. Add a new entry with the path to your Clang bin folder (e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin)
 6. Restart your command prompt, and within Jupyter Lab do Kernel -> Restart kernel, to pick up the changes
-5. Open a new command prompt and run this to make sure it's installed OK clang --version
+5. Open a new command prompt and run this to make sure it's installed OK
+
+    clang --version
 
 <a id="lab-projects"></a>
 # Lab Projects
@@ -208,3 +210,15 @@ Evaluating LLM performance by looking at Model-Centric vs Business-Centric metri
 - Familar with LangChain's declarative language LCEL
 - Understand how LangChain works behind the scenes
 - Debug and fix common issues with RAG
+
+# Patterns
+
+## FTI Design Pattern
+
+The feature/training/inference (FTI) architecture is the ML system pattern used as the core architecure in the LLM pipeline design. The FTI pipelines act as logical layers and this high-level architecture is language-, framework-, platform-, and inftrastructure agnostic.
+
+The FTI pattern is followed to compute the features, train the model, and make predictions using 3 or more pipelines that have each have a clearly defined scope and interface.
+
+The data and feature pipelines scales horizontally based on CPU and RAM load, the training pipeline scales vertically by adding more GPUs, and the inference pipeline sales horizontally based on the number of client requests.
+
+<img src="./content/FTI-Pipelines-Architecture.jpg" alt="Feature/training/inference (FTI) architecture" />
