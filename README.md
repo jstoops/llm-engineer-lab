@@ -11,10 +11,10 @@ Inspiration from these recommended courses and books:
 
 **Table of content**
 - [Data Science Environment Setup](#setup)
+- [Patterns](#patterns)
 - [Lab Projects](#lab-projects)
 - [HugglingFace Library Experiments](#hf-lib-exp)
 - [Tools](#tools)
-- [Patterns](#patterns)
 - [Skills Developed](#skills)
 
 <a id="setup"></a>
