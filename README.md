@@ -142,6 +142,7 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 - [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb): uses LlamaParse to convert PDFs and other document types to markdown.
 - [Improve Code Performance](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/code-converter.ipynb): uses Frontier and open-source models to generate high performance C++ code from Python code.
 - [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/gpu-info.ipynb): code to display information about the GPUs that are currently running on a Notebook in Colab.
+- [Image Generator](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/image-generator.ipynb): uses Dall-E 2 or 3 to generate an image based on a user prompt.
 
 <a id="skills"></a>
 # Skills Developed
