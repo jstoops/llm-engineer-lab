@@ -13,6 +13,7 @@ Inspiration from these recommended courses and books:
 - [Data Science Environment Setup](#setup)
 - [Patterns](#patterns)
 - [Lab Projects](#lab-projects)
+- [Flowise Projects](#flowise-projects)
 - [HugglingFace Library Experiments](#hf-lib-exp)
 - [Tools](#tools)
 - [Skills Developed](#skills)
@@ -104,6 +105,67 @@ Check all required packages installed in JupyterLab:
 
     clang --version
 
+## Flowise Setup
+
+### On Local Machine
+
+See [Flowise repo readme](https://github.com/FlowiseAI/Flowise/blob/main/README.md) for detailsed steps and under Quick Start the versions of Node.js currently supported.
+
+1. Install Node.js (v18, v19, or v20) & NPM: https://nodejs.org/en/download
+    - Check version of node installed:
+
+    node -v
+
+    - To downgrade can use NVM for windows: https://github.com/coreybutler/nvm-windows or https://github.com/Schniz/fnm
+
+2. Install Flowise:
+
+    npm install -g flowise
+
+3. Start Flowise:
+
+    npx flowise start
+
+    - Or start with username & password:
+
+    npx flowise start --FLOWISE_USERNAME=user --FLOWISE_PASSWORD=1234
+
+4. Go to UI at http://localhost:3000
+
+Other useful commands:
+- Update flowise:
+
+    npm update -g flowise
+
+### Run Flowise and AI Agents on Render
+
+For details see:
+- [Deploy Flowise to the cloud guide](https://docs.flowiseai.com/configuration/deployment)
+- [Deploy Flowise on Render guide](https://docs.flowiseai.com/configuration/deployment/render)
+- [How to configure environment variables for Flowise](https://docs.flowiseai.com/configuration/environment-variables)
+
+1. Click fork on Flowise repo & confirm ok to create new repo on your personal GitHub: https://github.com/FlowiseAI/Flowise
+2. Go to https://render.com/ & sign up or go to Dashboard
+3. Click Add new->Web Service->Build & deploy from a Git repo then click Connect on your Flowise repo
+4. Provide name, region, use main branch, Docker Runtime, select instance type/plan
+5. Set environment variables: FLOWISE_USERNAME, FLOWISE_PASSWORD, NODE_VERSION=20.18.0
+6. (if prod, non-free plan) Advanced->Add disk & specify:
+    - Mount path=/opt/render/.flowise
+    - Size=1GB
+    - Additonal enviornment variables:
+
+    DATABASE_PATH=/opt/render/.flowise
+    APIKEY_PATH=/opt/render/.flowise
+    LOG_PATH=/opt/render/.flowise/logs
+    SECRETKEY_PATH=/opt/render/.flowise
+
+7. Click Create Web Service
+8. Go to URL created to login to Flowise
+
+Other useful information:
+- Paid plan needed to persist AI agents created else they'll be wiped when instance is spund down after 15 minutes of inactivity
+- To update fork if behind click Sync fork->Update branch on your GitHub copy
+
 <a id="patterns"></a>
 # Patterns
 
@@ -120,6 +182,9 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 <a id="lab-projects"></a>
 # Lab Projects
 
+- [AI Voice Assistant](https://github.com/jstoops/ai-voice-assistant/blob/main/README.md): uses the user's mic, desktop and webcam to answer questions on what they're currently working on.
+- [Rental Investment Chatbot on Website](https://www.jdscraft.com/img/Rental-Investment-Chatbot-3.jpg): RAG chatbot uses a local LLM to embed a document on rental investing in a vector database and then a conversation QA chain to answer questions using it and embedded in [PropertyPulse](https://next-property-weld.vercel.app/).
+- [Blog Standard AI SaaS](https://github.com/jstoops/blog-standard/blob/main/README.md): Next.js & Open AI / GPT apps using MongoDB, Auth0, & Stripe to purchase tokens used to generate blog posts & SEO friendly titles targeting keywords using OpenAI API.
 - [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb): Give it a URL, and it will respond with a summary.
 - [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb): a product that builds a Brochure for a company to be used for prospective clients, investors and potential recruits when provided a company name and their primary website.
 - [AIs Having a Chat](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb): an adversarial conversation between Chatbots.
@@ -127,6 +192,18 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb): an AI Customer Support assistant for an Airline.
 - [Meeting Minutes Program](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/meeting-minutes.ipynb): generate meeting minutes from an audio recording of a meeting on your Google Drive.
 - [Expert Knowledge Worker](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/rag-knowledge-worker.ipynb): embeds documents in a vector datastore and uses RAG (Retrieval Augmented Generation) to ensure question/answering assistant is highly accuracy.
+
+<a id="flowise-projects"></a>
+# Flowise Projects
+
+Uses OpenAIs GPT LLM to create blog posts, write scripts for YouTube videos, titles for social media posts, research Web about a lead, writes emails, load documents into a vector databases to use for providing detailed knowledge, analyze finances & stocks, visualize data, etc.
+
+- [Social Media Strategy AI Agent](https://www.jdscraft.com/img/Social-AI-Agent.jpg): trained to generate blog posts on a specifc topic for a target audience, create a YouTube video script, attention grabbing titles, and social media posts to drive traffic to the blog post
+- [Lead Generation AI Agent](https://www.jdscraft.com/img/Search-Mail-AI-Agent.jpg): searches the internet for information on potential clients, generates a profile and creates a personalized email message to send for generating leads.
+- [Expert RAG App AI Agent](https://www.jdscraft.com/img/RAG-App-AI-Agent.jpg): putting data from PDFs, webpages or [converted to markdown](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb) for better results into a vector data store, and automatic local text storage of blog post generated.
+- [Personal Finance AI Agent](https://www.jdscraft.com/img/Personal-Finance-Data-AI-Agent.jpg): takes details on investment portfolio, uses a calculator to compute percentage distribution, writes python code to visualize investments, and writes a summary of the user's financial status integrating visual and calculations in the report.
+- [Stock Analyzer AI Agent](https://www.jdscraft.com/img/Stock-Analyzer-AI-Agent.jpg): calls an API to get data about a stock and generates an analysis report on it.
+- [Rental Investment Chatbot](https://www.jdscraft.com/img/Rental-Investment-Chatbot-1.jpg): takes a detailed rental investment knowledge base, uses a local LLM to embed the data in a vectore datastore, and uses the Groq API to call a more capable LLM to provide expert knowledge to user inquiries.
 
 <a id="hf-lib-exp"></a>
 # HugglingFace Library Experiments
@@ -138,8 +215,9 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 <a id="tools"></a>
 # Tools
 
-- [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/tech-questions.ipynb): takes a technical question, and responds with an explanation. Optimized for LLM and pythin code expertise.
-- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb): uses LlamaParse to convert PDFs and other document types to markdown.
+- [Prompt Engineering for Creating AI Agents](https://www.jdscraft.com/img/Prompting-Team-AI-Agent.jpg): used to explain the app you want to create, and AI will generate the system prompt for each Worker.
+- [Tech Question AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/tech-questions.ipynb): takes a technical question, and responds with an explanation. Optimized for LLM and python code expertise.
+- [Data Preparation for Training RAG Agent](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/llama-parse.ipynb): uses LlamaIndex and LlamaParse to convert PDFs and other document types to markdown.
 - [Improve Code Performance](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/code-converter.ipynb): uses Frontier and open-source models to generate high performance C++ code from Python code.
 - [Get GPU Info](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/gpu-info.ipynb): code to display information about the GPUs that are currently running on a Notebook in Colab.
 - [Image Generator](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/image-generator.ipynb): uses Dall-E 2 or 3 to generate an image based on a user prompt.
