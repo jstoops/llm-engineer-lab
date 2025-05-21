@@ -196,7 +196,7 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 <a id="flowise-projects"></a>
 # Flowise Projects
 
-Uses OpenAIs GPT LLM to create blog posts, write scripts for YouTube videos, titles for social media posts, research Web about a lead, writes emails, load documents into a vector databases to use for providing detailed knowledge, analyze finances & stocks, visualize data, etc.
+Uses OpenAIs GPT 4 LLM, or open-source llama 3.1 LLM for privacy, to create blog posts, write scripts for YouTube videos, titles for social media posts, research Web about a lead, writes emails, load documents into a vector databases to use for providing detailed knowledge, analyze finances & stocks, visualize data, etc.
 
 - [Social Media Strategy AI Agent](https://www.jdscraft.com/img/Social-AI-Agent.jpg): trained to generate blog posts on a specifc topic for a target audience, create a YouTube video script, attention grabbing titles, and social media posts to drive traffic to the blog post
 - [Lead Generation AI Agent](https://www.jdscraft.com/img/Search-Mail-AI-Agent.jpg): searches the internet for information on potential clients, generates a profile and creates a personalized email message to send for generating leads.
@@ -231,6 +231,7 @@ Uses OpenAIs GPT LLM to create blog posts, write scripts for YouTube videos, tit
 - Write code that interacts between multiple Frontier LLMs
 - Describe transformers, tokens, context windows, API costs, etc
 - Confidently code with APIs for Frontier Models GPT, Claude and Gemini
+- Define Agentic Frameworks and Agentic Workflows in more detail
 
 ## Multi-Model AI Chatbot Assistant Development
 
@@ -303,3 +304,63 @@ Evaluating LLM performance by looking at Model-Centric vs Business-Centric metri
 - Familar with LangChain's declarative language LCEL
 - Understand how LangChain works behind the scenes
 - Debug and fix common issues with RAG
+- Create advanced RAG solutions with and without LangChain
+
+## Fine-Tunning Frontier LLMs
+
+- Using Datasets from HuggingFace hub
+- Select, investigate and curate a Dataset
+- Identify evaluations criteria for judging success
+- Lay out a 5 step business strategy for selecting, training and applying an LLM
+- Constrast the 3 techniques for improving performance
+- Give common use cases for each of the techniques
+- Curate and upload a dataset to HuggingFace that's ready for training
+- Understand the process for Fine-Tuning a Frontier model
+
+## Fine-Tuning & Training Open-Source LLMs
+
+- Explain LoRA for fine-tuning Open Source models
+- Describe Quantization and QLoRA for fine-tuning open-source models
+- Explain how Training works
+- Define and use key hyper-parameters for fine-tuning: r, alpha, target modules, quantization, dropout
+- Define and use hyper-parameters for training: epoch, batch size, learning rates, gradient accumulation, optimizer
+- Set up a Supervised Fine Tuning Trainer
+- Train proprietary LLM to solve a business problem
+- Monitor progress in Weights & Biases
+- Save versions of trained models in HuggingFace hub
+- Run inference on a QLoRA fine-tuned model
+
+# Strategy to Find Best Solution to Business Problems
+
+- Follow a 5 step strategy to solve problems
+- Understand the role of a baseline model
+- Dataset curation
+- Making baseline models with traditional ML and Frontier solutions
+- Understand when and why to Fine-Tuning a Frontier model
+- Select an open-source Base Model to use to compete with the Frontier
+- Compare instruct and base base variants for task
+- Evaluate a base model against a business objective
+- Define and choose hyper-parameters for fine-tuning and training
+- Explain ways to train more quickly at lower costs
+- Confidently carry out the end-to-end process for selecting and training open-source models to solve a business problem
+
+# Productionize Solutions for Commercial Problems
+
+- Build a framework to solve commercial problems using a Frontier model
+- Create a traditional ML solution with feature engineering, bag of words, word2vec and linear regression
+- Apply more advanced NLP techniques including SVR and Random Forest
+- Run test datasets against GTP-4o-mini, GPT-4o and Claude-3.5-Sonnet
+- Create a fine-tuning dataset and run fine-tuning
+- Test a fine-tuned Frontier model
+- Deploy customized models behind an API
+- Create production products that use custom Models
+- Create an end-to-end solution to commercial problems with groundbreaking LLMs
+- Use Modal, the serverless platform for AI, to run code remotely
+- Deploy LLMs behind an API in the cloud
+- Create Agents that are incorporated into autonoumous Agentic AI solutions
+- Build ensemble models with high level of expertise
+- Deliver production ready code to call a number of models
+- Deploy multiple models to production including proprietary LLMs on Model, a RAG workflow with Frontier models, and ML models
+- Use Structured Outputs to ensure frontier models respond based on a spec
+- Build an Agentic Framework that sends push notifications
+- Build Agentic Workflows with Planning, Memory, Database, and multiple Agents collaborating to solve complex tasks
