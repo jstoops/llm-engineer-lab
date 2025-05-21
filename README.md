@@ -182,6 +182,7 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 <a id="lab-projects"></a>
 # Lab Projects
 
+- [Product Pricer](https://github.com/jstoops/product-pricing-agent/blob/main/README.md): compares LLMs, fine-tuned frontier and open-sources models to traditional machine-learning and humand prediction of pricers with winner setup in an AI agent framework that sends push notifications when a good product deal is found.
 - [AI Voice Assistant](https://github.com/jstoops/ai-voice-assistant/blob/main/README.md): uses the user's mic, desktop and webcam to answer questions on what they're currently working on.
 - [Rental Investment Chatbot on Website](https://www.jdscraft.com/img/Rental-Investment-Chatbot-3.jpg): RAG chatbot uses a local LLM to embed a document on rental investing in a vector database and then a conversation QA chain to answer questions using it and embedded in [PropertyPulse](https://next-property-weld.vercel.app/).
 - [Blog Standard AI SaaS](https://github.com/jstoops/blog-standard/blob/main/README.md): Next.js & Open AI / GPT apps using MongoDB, Auth0, & Stripe to purchase tokens used to generate blog posts & SEO friendly titles targeting keywords using OpenAI API.
