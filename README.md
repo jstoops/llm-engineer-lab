@@ -182,12 +182,12 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 <a id="lab-projects"></a>
 # Lab Projects
 
-- [Product Pricer](https://github.com/jstoops/product-pricing-agent/blob/main/README.md): compares LLMs, fine-tuned frontier and open-sources models to traditional machine-learning and humand prediction of pricers with winner setup in an AI agent framework that sends push notifications when a good product deal is found.
+- [Product Pricer](https://github.com/jstoops/product-pricing-agent/blob/main/README.md): compares base LLMs as well as fine-tuned frontier and open-sources models to traditional machine-learning and human prediction of product prices based on a description with winner setup in an AI agentic framework that sends push notifications to you when a deal in a product is found.
 - [AI Voice Assistant](https://github.com/jstoops/ai-voice-assistant/blob/main/README.md): uses the user's mic, desktop and webcam to answer questions on what they're currently working on.
 - [Rental Investment Chatbot on Website](https://www.jdscraft.com/img/Rental-Investment-Chatbot-3.jpg): RAG chatbot uses a local LLM to embed a document on rental investing in a vector database and then a conversation QA chain to answer questions using it and embedded in [PropertyPulse](https://next-property-weld.vercel.app/).
 - [Blog Standard AI SaaS](https://github.com/jstoops/blog-standard/blob/main/README.md): Next.js & Open AI / GPT apps using MongoDB, Auth0, & Stripe to purchase tokens used to generate blog posts & SEO friendly titles targeting keywords using OpenAI API.
 - [Website Summarizer](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/site-summary-require-js.ipynb): Give it a URL, and it will respond with a summary.
-- [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb): a product that builds a Brochure for a company to be used for prospective clients, investors and potential recruits when provided a company name and their primary website.
+- [AI-Powered Marketing Brochures](projects/brochure-multi-prompt-spanish.ipynb): a product that builds a Brochure for a company to be used for prospective clients, investors and potential recruits when provided a company name and their primary website with language translation capabiltities.
 - [AIs Having a Chat](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/4-way-AI-conversation.ipynb): an adversarial conversation between Chatbots.
 - [Store Chatbot](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/chatbot.ipynb): a conversational AI with multi-shot prompting.
 - [Airline AI Assistant](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/airline-ai-assistant.ipynb): an AI Customer Support assistant for an Airline.
