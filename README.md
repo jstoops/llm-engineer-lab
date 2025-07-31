@@ -1,15 +1,16 @@
-My LLM Engineering Lab
-======================
+# My LLM Engineering Lab
 
 Used to quickly prototype ideas before turning them into applications in python using Anaconda, JupyterLab, and Google Colab.
 
 Inspiration from these recommended courses and books:
+
 - [LLM Engineering: Master AI, Large Language Models & Agents by Ed Donner](https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/)
 - [AI-Agents: Automation & Business with LangChain & LLM Apps by Arnold Oberleiter](https://www.udemy.com/course/ai-agents-automation-business-with-langchain-llm-apps/)
 - [LLM Engineer's Handbook by Paul Iusztin and Maxime Labonne](https://www.packtpub.com/en-us/product/llm-engineers-handbook-9781836200062)
 - [The Machine Learning Solutions Architect Handbook](https://www.packtpub.com/en-us/product/the-machine-learning-solutions-architect-handbook-9781805124825)
 
 **Table of content**
+
 - [Data Science Environment Setup](#setup)
 - [Patterns](#patterns)
 - [Lab Projects](#lab-projects)
@@ -19,56 +20,65 @@ Inspiration from these recommended courses and books:
 - [Skills Developed](#skills)
 
 <a id="setup"></a>
+
 # Data Science Environment Setup
 
 ## Anaconda and JupyterLab
 
 1. Clone the repo
-    git clone https://github.com/jstoops/llm-engineer-lab.git
+   git clone https://github.com/jstoops/llm-engineer-lab.git
 2. Download and install Anaconda: https://www.anaconda.com/download
 3. Run Anaconda PowerShell Prompt
 4. Nav to project directory and create an environment using a setup file:
 
-    conda env create -f environment.yml
+   conda env create -f environment.yml
+
 5. Download and install Ollama for open-source LLMs: https://ollama.com/
 6. Create a .env file in project root with keys: OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
 7. Create keys/tokens and set to secret key values in .env
-    - OpenAI API for GPT4o: https://platform.openai.com/settings/organization/api-keys
-    - Google AI for Gemini API: https://ai.google.dev/gemini-api/docs
-    - Anthropic for Claude Sonnet: https://console.anthropic.com/settings/keys
-    - DeepSeek: https://platform.deepseek.com/api_keys
-    - HuggingFace: https://huggingface.co/settings/tokens
-    - LlamaCloud: Go to https://cloud.llamaindex.ai/ then API Keys
+   - OpenAI API for GPT4o: https://platform.openai.com/settings/organization/api-keys
+   - Google AI for Gemini API: https://ai.google.dev/gemini-api/docs
+   - Anthropic for Claude Sonnet: https://console.anthropic.com/settings/keys
+   - DeepSeek: https://platform.deepseek.com/api_keys
+   - HuggingFace: https://huggingface.co/settings/tokens
+   - LlamaCloud: Go to https://cloud.llamaindex.ai/ then API Keys
 8. Activate environment:
 
-    conda activate llms-eng
+   conda activate llms-eng
+
 9. Verify correct python version is being used, e.g. 3.11.11:
 
-    python --version
+   python --version
+
 10. Open Jupyter environment:
 
     jupyter lab
 
-Start environment after inital setup:
+Start environment after initial setup:
+
 1. Run Anaconda PowerShell Prompt
 2. Nav to project directory
 3. Activate environment:
 
-    conda activate llms-eng
+   conda activate llms-eng
+
 4. Open Jupyter environment:
 
-    jupyter lab
+   jupyter lab
+
+Update environment:
+`conda update jupyterlab`
 
 ## Audio Setup
 
 1. Download FFmpeg from the official website: https://ffmpeg.org/download.html
 2. Extract the downloaded files to a location on your computer (e.g., C:\ffmpeg)
 3. Add the FFmpeg bin folder to your system PATH:
-    1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
-    2. Click on 'Advanced system settings'
-    3. Click on 'Environment Variables'
-    4. Under 'System variables', find and edit 'Path'
-    5. Add a new entry with the path to your FFmpeg bin folder (e.g., C:\ffmpeg\bin)
+   1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
+   2. Click on 'Advanced system settings'
+   3. Click on 'Environment Variables'
+   4. Under 'System variables', find and edit 'Path'
+   5. Add a new entry with the path to your FFmpeg bin folder (e.g., C:\ffmpeg\bin)
 4. Restart your command prompt, and within Jupyter Lab do Kernel -> Restart kernel, to pick up the changes
 5. Open a new command prompt and run this to make sure it's installed OK ffmpeg -version
 
@@ -95,15 +105,15 @@ Check all required packages installed in JupyterLab:
 3. Under _Compilers, build tools, and runtimes_ check `C++ Clang Compiler for Windows`
 4. Click install
 5. Add the Clang bin folder to your system PATH:
-    1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
-    2. Click on 'Advanced system settings'
-    3. Click on 'Environment Variables'
-    4. Under 'System variables', find and edit 'Path'
-    5. Add a new entry with the path to your Clang bin folder (e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin)
+   1. Right-click on 'This PC' or 'My Computer' and select 'Properties'
+   2. Click on 'Advanced system settings'
+   3. Click on 'Environment Variables'
+   4. Under 'System variables', find and edit 'Path'
+   5. Add a new entry with the path to your Clang bin folder (e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin)
 6. Restart your command prompt, and within Jupyter Lab do Kernel -> Restart kernel, to pick up the changes
-5. Open a new command prompt and run this to make sure it's installed OK
+7. Open a new command prompt and run this to make sure it's installed OK
 
-    clang --version
+   clang --version
 
 ## Flowise Setup
 
@@ -112,34 +122,37 @@ Check all required packages installed in JupyterLab:
 See [Flowise repo readme](https://github.com/FlowiseAI/Flowise/blob/main/README.md) for detailsed steps and under Quick Start the versions of Node.js currently supported.
 
 1. Install Node.js (v18, v19, or v20) & NPM: https://nodejs.org/en/download
-    - Check version of node installed:
 
-    node -v
+   - Check version of node installed:
 
-    - To downgrade can use NVM for windows: https://github.com/coreybutler/nvm-windows or https://github.com/Schniz/fnm
+   node -v
+
+   - To downgrade can use NVM for windows: https://github.com/coreybutler/nvm-windows or https://github.com/Schniz/fnm
 
 2. Install Flowise:
 
-    npm install -g flowise
+   npm install -g flowise
 
 3. Start Flowise:
 
-    npx flowise start
+   npx flowise start
 
-    - Or start with username & password:
+   - Or start with username & password:
 
-    npx flowise start --FLOWISE_USERNAME=user --FLOWISE_PASSWORD=1234
+   npx flowise start --FLOWISE_USERNAME=user --FLOWISE_PASSWORD=1234
 
 4. Go to UI at http://localhost:3000
 
 Other useful commands:
+
 - Update flowise:
 
-    npm update -g flowise
+  npm update -g flowise
 
 ### Run Flowise and AI Agents on Render
 
 For details see:
+
 - [Deploy Flowise to the cloud guide](https://docs.flowiseai.com/configuration/deployment)
 - [Deploy Flowise on Render guide](https://docs.flowiseai.com/configuration/deployment/render)
 - [How to configure environment variables for Flowise](https://docs.flowiseai.com/configuration/environment-variables)
@@ -150,28 +163,31 @@ For details see:
 4. Provide name, region, use main branch, Docker Runtime, select instance type/plan
 5. Set environment variables: FLOWISE_USERNAME, FLOWISE_PASSWORD, NODE_VERSION=20.18.0
 6. (if prod, non-free plan) Advanced->Add disk & specify:
-    - Mount path=/opt/render/.flowise
-    - Size=1GB
-    - Additonal enviornment variables:
 
-    DATABASE_PATH=/opt/render/.flowise
-    APIKEY_PATH=/opt/render/.flowise
-    LOG_PATH=/opt/render/.flowise/logs
-    SECRETKEY_PATH=/opt/render/.flowise
+   - Mount path=/opt/render/.flowise
+   - Size=1GB
+   - Additonal enviornment variables:
+
+   DATABASE_PATH=/opt/render/.flowise
+   APIKEY_PATH=/opt/render/.flowise
+   LOG_PATH=/opt/render/.flowise/logs
+   SECRETKEY_PATH=/opt/render/.flowise
 
 7. Click Create Web Service
 8. Go to URL created to login to Flowise
 
 Other useful information:
+
 - Paid plan needed to persist AI agents created else they'll be wiped when instance is spund down after 15 minutes of inactivity
 - To update fork if behind click Sync fork->Update branch on your GitHub copy
 
 <a id="patterns"></a>
+
 # Patterns
 
 ## FTI Design Pattern
 
-The feature/training/inference (FTI) architecture is the ML system pattern used as the core architecure in the LLM pipeline design. The FTI pipelines act as logical layers and this high-level architecture is language-, framework-, platform-, and inftrastructure agnostic.
+The feature/training/inference (FTI) architecture is the ML system pattern used as the core architecture in the LLM pipeline design. The FTI pipelines act as logical layers and this high-level architecture is language-, framework-, platform-, and infrastructure agnostic.
 
 The FTI pattern is followed to compute the features, train the model, and make predictions using 3 or more pipelines that each have a clearly defined scope and interface.
 
@@ -180,6 +196,7 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 <img src="./content/FTI-Pipelines-Architecture.jpg" alt="Feature/training/inference (FTI) architecture" />
 
 <a id="lab-projects"></a>
+
 # Lab Projects
 
 - [Product Pricer](https://github.com/jstoops/product-pricing-agent/blob/main/README.md): compares base LLMs, as well as fine-tuned frontier and open-sources models, to traditional machine-learning (ML) techniques and human prediction of product prices based on a description. The winner, along with 6 other agents, is productionized in an AI agentic framework that sends push notifications to you when a deal is found.
@@ -195,6 +212,7 @@ The data and feature pipelines scales horizontally based on CPU and RAM load, th
 - [Expert Knowledge Worker](https://github.com/jstoops/llm-engineer-lab/blob/main/projects/rag-knowledge-worker.ipynb): embeds documents in a vector datastore and uses RAG (Retrieval Augmented Generation) to ensure question/answering assistant is highly accuracy.
 
 <a id="flowise-projects"></a>
+
 # Flowise Projects
 
 Uses OpenAIs GPT 4 LLM, or open-source llama 3.1 LLM for privacy, to create blog posts, write scripts for YouTube videos, titles for social media posts, research Web about a lead, writes emails, load documents into a vector databases to use for providing detailed knowledge, analyze finances & stocks, visualize data, etc.
@@ -207,6 +225,7 @@ Uses OpenAIs GPT 4 LLM, or open-source llama 3.1 LLM for privacy, to create blog
 - [Rental Investment Chatbot](https://www.jdscraft.com/img/Rental-Investment-Chatbot-1.jpg): takes a detailed rental investment knowledge base, uses a local LLM to embed the data in a vectore datastore, and uses the Groq API to call a more capable LLM to provide expert knowledge to user inquiries.
 
 <a id="hf-lib-exp"></a>
+
 # HugglingFace Library Experiments
 
 - [Pipelines](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/pipelines.ipynb): exploring the HuggingFace High Level API.
@@ -214,6 +233,7 @@ Uses OpenAIs GPT 4 LLM, or open-source llama 3.1 LLM for privacy, to create blog
 - [Models](https://github.com/jstoops/llm-engineer-lab/blob/main/hf-libs/models.ipynb): exploring the heart of the transformers library.
 
 <a id="tools"></a>
+
 # Tools
 
 - [Prompt Engineering for Creating AI Agents](https://www.jdscraft.com/img/Prompting-Team-AI-Agent.jpg): used to explain the app you want to create, and AI will generate the system prompt for each Worker.
@@ -224,6 +244,7 @@ Uses OpenAIs GPT 4 LLM, or open-source llama 3.1 LLM for privacy, to create blog
 - [Image Generator](https://github.com/jstoops/llm-engineer-lab/blob/main/tools/image-generator.ipynb): uses Dall-E 2 or 3 to generate an image based on a user prompt.
 
 <a id="skills"></a>
+
 # Skills Developed
 
 - Confidently use the OpenAI & Ollama API including streaming with markdown and JSON generation
@@ -237,6 +258,7 @@ Uses OpenAIs GPT 4 LLM, or open-source llama 3.1 LLM for privacy, to create blog
 ## Multi-Model AI Chatbot Assistant Development
 
 Build multi-modal AI Chatbot Assistants with UI, Tools, and Agents for enhanced expertise:
+
 - Implement customer support assistants with Chat UIs
 - Create data science UIs in Gradio
 - Provide context in a prompt including multi-shot prompting
@@ -247,6 +269,7 @@ Build multi-modal AI Chatbot Assistants with UI, Tools, and Agents for enhanced 
 ## HuggingFace Libraries
 
 Navigate the HuggingPlace platform, run code in Colab and use HuggingFace pipelines, tokenizers and models:
+
 - Find Models, Datasets and Spaces on the HuggingFace platform
 - Use Google Colab to code on a high spec GPU runtime
 - Use HuggingFace pipelines for a wide variety of inference tasks
@@ -265,6 +288,7 @@ Navigate the HuggingPlace platform, run code in Colab and use HuggingFace pipeli
 ## Comparing Open and Closed Source Models
 
 Compare LLMs to identify the right one for the task at hand:
+
 - Navigate the most useful leaderboards and arenas to evaluate LLMs
 - Compare LLMs based on their basic attributes and benchmarks
 - Give real-world use cases of LLMs solving commercial problems
@@ -273,6 +297,7 @@ Compare LLMs to identify the right one for the task at hand:
 ## Leveraging Frontier Models for High-Performance Code Generation in C++
 
 Build a product that converts Python code to C++ for performance:
+
 - Assess Frontier and Open-Source models for coding ability
 - Use Frontier and open-source models to generate code
 - Implement solutions that use Frontier and Open-source LLMs to generate code
@@ -281,6 +306,7 @@ Build a product that converts Python code to C++ for performance:
 ## Evaluating LLM Code Generation Performance
 
 Evaluating LLM performance by looking at Model-Centric vs Business-Centric metrics:
+
 - Compare performance of open-source and closed source models
 - Describe different commercial use cases for code generation
 - Build solutions that use code generation for diverse tasks
