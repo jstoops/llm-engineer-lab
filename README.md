@@ -23,15 +23,42 @@ Inspiration from these recommended courses and books:
 
 # Data Science Environment Setup
 
+## Setup Python
+
+### Windows
+
+Install from Microsoft Store, download and run .exe from pythin.org, or via command line:
+
+1. Run `winget configure -f https://aka.ms/python-config`
+2. Type `y` to accept terms
+3. Check version installed successfully: `python --version` or  `python3 -V` or  `python -V`
+
+Never run  `python -v`
+
+### Python Environments with venv
+
+REF: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+
+Setup:
+
+1. Check python is installed: `python3 -V`
+2. Install venv: `python3 -m venv .venv`
+3. Activate python environment:
+	- For Command Prompt: `venv\Scripts\activate.bat`
+	- For PowerShell `venv\Scripts\Activate.ps1`
+	- For Git Bash or other Unix-like shells: `source venv/Scripts/activate`
+
 ## Anaconda and JupyterLab
 
-1. Clone the repo
-   git clone https://github.com/jstoops/llm-engineer-lab.git
+1. Clone the repo:
+
+   `git clone https://github.com/jstoops/llm-engineer-lab.git`
+   
 2. Download and install Anaconda: https://www.anaconda.com/download
 3. Run Anaconda PowerShell Prompt
 4. Nav to project directory and create an environment using a setup file:
 
-   conda env create -f environment.yml
+   `conda env create -f environment.yml`
 
 5. Download and install Ollama for open-source LLMs: https://ollama.com/
 6. Create a .env file in project root with keys: OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
@@ -44,27 +71,42 @@ Inspiration from these recommended courses and books:
    - LlamaCloud: Go to https://cloud.llamaindex.ai/ then API Keys
 8. Activate environment:
 
-   conda activate llms-eng
+   `conda activate llms-eng`
 
 9. Verify correct python version is being used, e.g. 3.11.11:
 
-   python --version
+   `python --version`
 
 10. Open Jupyter environment:
 
-    jupyter lab
+    `jupyter lab`
 
-Start environment after initial setup:
+### Create Anaconda Profile in Windows Terminal
 
-1. Run Anaconda PowerShell Prompt
+1. Open Windows Terminal
+2. Select _Settings_ from down arrow (`v`)
+3. Click _+ Add new profile_
+4. Name it "Anaconda"
+5. In the Command line enter the following (replace with USERNAME with your windows username directory and check that's the path that Anaconda installed to):
+
+	`%windir%\System32\cmd.exe "/K" C:\Users\USERNAME\anaconda3\Scripts\activate.bat C:\Users\USERNAME\anaconda3`
+
+6. Optionally set _Start directory_
+7. Optinally set icon to `C:\Users\jd_st\OneDrive\Pictures\Icons\Anaconda.png`
+9. Click __Save__
+10. Run `Anaconda` Command Terminal prompt from down arrow  (`v`)
+
+### Start environment after initial setup
+
+1. Run `Anaconda` Command Terminal prompt
 2. Nav to project directory
 3. Activate environment:
 
-   conda activate llms-eng
+   `conda activate llms-eng`
 
 4. Open Jupyter environment:
 
-   jupyter lab
+   `jupyter lab`
 
 Update environment:
 `conda update jupyterlab`
@@ -121,33 +163,70 @@ Check all required packages installed in JupyterLab:
 
 See [Flowise repo readme](https://github.com/FlowiseAI/Flowise/blob/main/README.md) for detailsed steps and under Quick Start the versions of Node.js currently supported.
 
-1. Install Node.js (v18, v19, or v20) & NPM: https://nodejs.org/en/download
+1. Install Node.js (v18.15 - nothing else seems to work now!) & NPM: https://nodejs.org/en/download
 
    - Check version of node installed:
 
-   node -v
+   `node -v`
 
    - To downgrade can use NVM for windows: https://github.com/coreybutler/nvm-windows or https://github.com/Schniz/fnm
 
-2. Install Flowise:
+2. Install PNPM:
 
-   npm install -g flowise
+	`npm i -g pnpm`
 
-3. Start Flowise:
+3. Clone Flowise repo:
 
-   npx flowise start
+   `git clone https://github.com/FlowiseAI/Flowise.git`
 
-   - Or start with username & password:
+3. Go to Flowise folder:
 
-   npx flowise start --FLOWISE_USERNAME=user --FLOWISE_PASSWORD=1234
+	`cd Flowise`
+	
+4. Install all dependencies of all modules:
 
-4. Go to UI at http://localhost:3000
+	`pnpm install`
 
-Other useful commands:
+5. Build all the code:
 
-- Update flowise:
+	`pnpm build`
 
-  npm update -g flowise
+    <details>
+    <summary>Exit code 134 (JavaScript heap out of memory)</summary>  
+    If you get this error when running the above `build` script, try increasing the Node.js heap size and run the script again:
+
+    ```bash
+    # macOS / Linux / Git Bash
+    export NODE_OPTIONS="--max-old-space-size=4096"
+
+    # Windows PowerShell
+    $env:NODE_OPTIONS="--max-old-space-size=4096"
+
+    # Windows CMD
+    set NODE_OPTIONS=--max-old-space-size=4096
+    ```
+
+    Then run:
+
+    ```bash
+    pnpm build
+    ```
+
+    </details>
+	
+6. Start Flowise:
+
+   `pnpm start`
+   
+7. Go to UI at http://localhost:3000 & setup login
+
+#### Start Flowise after initial setup
+
+1. Start Flowise:
+
+   `pnpm start`
+   
+2. Go to UI at http://localhost:3000 
 
 ### Run Flowise and AI Agents on Render
 
