@@ -37,7 +37,7 @@ Never run  `python -v`
 
 ### Python Environments
 
-`venv` and `pyenv` are complementary tools used in Python development, but they serve fundamentally different purposes: `pyenv` manages which version of Python you are using (e.g., Python 3.10 vs. 3.12), while `venv` creates an isolated environment for the packages required by a specific project.
+`venv` and `pyenv` are complementary tools used in Python development, but they serve fundamentally different purposes: `pyenv` manages which version of Python you are using (e.g., Python 3.10 vs. 3.12), while `venv` creates an isolated environment for the packages required by a specific project. Use `Poetry` for advanced dependency management, packaging, and project automation
 
 #### venv
 
@@ -106,27 +106,44 @@ Setup:
    \path\to\.pyenv\pyenv-win\versions\<version>\python.exe
    ```
 
-## pyenv-win commands
+### Poetry: dependency and virtual environment management
 
-```yml
-   commands     List all available pyenv commands
-   local        Set or show the local application-specific Python version
-   latest       Print the latest installed or known version with the given prefix
-   global       Set or show the global Python version
-   shell        Set or show the shell-specific Python version
-   install      Install 1 or more versions of Python
-   uninstall    Uninstall 1 or more versions of Python
-   update       Update the cached version DB
-   rehash       Rehash pyenv shims (run this after switching Python versions)
-   vname        Show the current Python version
-   version      Show the current Python version and its origin
-   version-name Show the current Python version
-   versions     List all Python versions available to pyenv
-   exec         Runs an executable by first preparing PATH so that the selected 
-                Python version's `bin' directory is at the front
-   which        Display the full path to an executable
-   whence       List all Python versions that contain the given executable
-```
+Documentation: https://python-poetry.org/docs/
+
+Use Poetry for dependency and virtual environment management within the Python ecosystem. A dependency manager allows you to specify, install, update, and manage external libraries or packages (dependencies) that a project relies on. A virtual environment allows you to isolate your project's dependencies from your global Python dependencies and other projects.
+
+By default Poetry saves all its requirements in `pyproject.toml` files, which are stored in the root of your repo. This ensures the correct version of the dependencies are installed for the project.
+
+Poetry creates a new Python virtual environment in which it installs the specified Python version and requirements. This ensures there are no version clashes or corruption between projects.
+
+**Alternatives** are venv and Conda for creating virtual environments but they lack the dependency management option.
+
+Steps:
+
+1. Install Poetry: https://python-poetry.org/docs/
+2. Navigate to root of cloned repo and install all necessary Python dependencies:
+   `poetry install --without aws`
+3. Setup pre-commit hooks for code verification:
+   `poetry run pre-commit install`
+4. Activate Poetry
+   - in PowerShell: `Invoke-Expression (poetry env activate)`
+   - in Bash/Zsh/Csh: `eval $(poetry env activate)`
+
+### Poe the Poet: task execution tool
+
+Poe the Poet is a plugin on top of Poetry that is used to manage and execute all the CLI commands required to interact with the project. It helps you define and tasks within your Python project, simplifying automation and script execution.
+
+**Alternatives** are Makefile, Invoke, or shell scripts but they require you to write separate shell scripts or Makefiles for managing project tasks.
+
+Add commands directly to your [`pyproject.toml`](https://github.com/jstoops/llm-twin/blob/main/pyproject.toml) file under `[tool.poe.tasks]` and execute them in the command line with an alias.
+
+STOOPS EDIT: change run-digital-data-etl command to just run run-digital-data-etl-stoops
+
+Steps:
+
+1. Navigate to cloned repo and install Poe the Poet as a Poetry plugin:
+   `poetry self add 'poethepoet[poetry_plugin]'`
+
 
 ## Anaconda and JupyterLab
 
