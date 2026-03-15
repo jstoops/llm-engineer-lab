@@ -61,10 +61,10 @@ Setup:
 	- For Command Prompt: `venv\Scripts\activate.bat`
 	- For PowerShell `venv\Scripts\Activate.ps1`
 	- For Git Bash or other Unix-like shells: `source venv/Scripts/activate`
+	
 #### pyenv
 
 pyenv is a third-party tool that allows you to install, manage, and switch between multiple Python versions on your machine. 
-Stack Overflow
 
 **Purpose:** To solve the problem of needing different Python interpreter versions for different projects (e.g., Project A needs Python 3.8, while Project B needs Python 3.12).
 
@@ -127,17 +127,6 @@ Setup:
    which        Display the full path to an executable
    whence       List all Python versions that contain the given executable
 ```
-
-REF: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
-
-Setup:
-
-1. Check python is installed: `python3 -V`
-2. Install venv: `python3 -m venv .venv`
-3. Activate python environment:
-	- For Command Prompt: `venv\Scripts\activate.bat`
-	- For PowerShell `venv\Scripts\Activate.ps1`
-	- For Git Bash or other Unix-like shells: `source venv/Scripts/activate`
 
 ## Anaconda and JupyterLab
 
