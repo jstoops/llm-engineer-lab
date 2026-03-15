@@ -35,7 +35,98 @@ Install from Microsoft Store, download and run .exe from pythin.org, or via comm
 
 Never run  `python -v`
 
-### Python Environments with venv
+### Python Environments
+
+`venv` and `pyenv` are complementary tools used in Python development, but they serve fundamentally different purposes: `pyenv` manages which version of Python you are using (e.g., Python 3.10 vs. 3.12), while `venv` creates an isolated environment for the packages required by a specific project.
+
+#### venv
+
+REF: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+
+venv is a built-in Python module (part of the standard library since Python 3.3) used to create isolated virtual environments. 
+
+**Purpose:** To solve the problem of package dependency conflicts between projects.
+
+**Mechanism:** It creates a dedicated directory (commonly named .venv or venv within your project folder) that contains a copy of a specific Python interpreter, its own pip installer, and a site-packages directory. When activated, your shell uses this isolated directory for all package installations, keeping them separate from the system-wide or other project-specific packages.
+
+**Key Feature:** It ensures that each project has its own clean set of dependencies, making builds reproducible and preventing one project's updates from breaking another.
+
+**Compatibility:** venv is a pure Python solution and works cross-platform wherever Python 3.3+ is available.
+
+Setup:
+
+1. Check python is installed: `python3 -V`
+2. Install venv: `python3 -m venv .venv`
+3. Activate python environment:
+	- For Command Prompt: `venv\Scripts\activate.bat`
+	- For PowerShell `venv\Scripts\Activate.ps1`
+	- For Git Bash or other Unix-like shells: `source venv/Scripts/activate`
+#### pyenv
+
+pyenv is a third-party tool that allows you to install, manage, and switch between multiple Python versions on your machine. 
+Stack Overflow
+
+**Purpose:** To solve the problem of needing different Python interpreter versions for different projects (e.g., Project A needs Python 3.8, while Project B needs Python 3.12).
+
+**Mechanism:** It works by using "shims" to intercept your calls to python or pip and directs them to the correct installed Python version based on global, user, or project-specific configurations (managed via a .python-version file).
+
+**Key Feature:** It allows you to easily install different Python versions (often by compiling them from source) and switch the active version with simple commands like pyenv global or pyenv local.
+Compatibility: pyenv itself is primarily a bash extension and generally does not work natively on Windows, though it is widely used on macOS and Linux. 
+
+Source code: [pyenv](https://github.com/pyenv/pyenv)
+
+#### Windows
+
+Pyenv does not officially support Windows  so use [pyenv-win](https://github.com/pyenv-win/pyenv-win) fork that installs native Windows Python versions.
+
+Setup:
+
+1. Install pyenv-win in PowerShell.
+
+   ```pwsh
+   Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+   ```
+
+2. Reopen PowerShell
+3. Run `pyenv --version` to check if the installation was successful.
+4. Run `pyenv install -l` to check a list of Python versions supported by pyenv-win
+5. Run `pyenv install <version>` to install the supported version
+6. Run `pyenv global <version>` to set a Python version as the global version
+7. Check which Python version you are using and its path
+
+   ```plaintext
+   > pyenv version
+   <version> (set by \path\to\.pyenv\pyenv-win\.python-version)
+   ```
+
+8. Check that Python is working
+
+   ```plaintext
+   > python -c "import sys; print(sys.executable)"
+   \path\to\.pyenv\pyenv-win\versions\<version>\python.exe
+   ```
+
+## pyenv-win commands
+
+```yml
+   commands     List all available pyenv commands
+   local        Set or show the local application-specific Python version
+   latest       Print the latest installed or known version with the given prefix
+   global       Set or show the global Python version
+   shell        Set or show the shell-specific Python version
+   install      Install 1 or more versions of Python
+   uninstall    Uninstall 1 or more versions of Python
+   update       Update the cached version DB
+   rehash       Rehash pyenv shims (run this after switching Python versions)
+   vname        Show the current Python version
+   version      Show the current Python version and its origin
+   version-name Show the current Python version
+   versions     List all Python versions available to pyenv
+   exec         Runs an executable by first preparing PATH so that the selected 
+                Python version's `bin' directory is at the front
+   which        Display the full path to an executable
+   whence       List all Python versions that contain the given executable
+```
 
 REF: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
