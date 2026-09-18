@@ -137,8 +137,6 @@ Poe the Poet is a plugin on top of Poetry that is used to manage and execute all
 
 Add commands directly to your [`pyproject.toml`](https://github.com/jstoops/llm-twin/blob/main/pyproject.toml) file under `[tool.poe.tasks]` and execute them in the command line with an alias.
 
-STOOPS EDIT: change run-digital-data-etl command to just run run-digital-data-etl-stoops
-
 Steps:
 
 1. Navigate to cloned repo and install Poe the Poet as a Poetry plugin:
