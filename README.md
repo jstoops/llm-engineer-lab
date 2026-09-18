@@ -153,28 +153,34 @@ Steps:
    
 2. Download and install Anaconda: https://www.anaconda.com/download
 3. Run Anaconda PowerShell Prompt
-4. Nav to project directory and create an environment using a setup file:
+4. To accept these channels' Terms of Service, run the following commands:
+    ```
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/msys2
+    ```
+5. Nav to project directory and create an environment using a setup file:
 
    `conda env create -f environment.yml`
 
-5. Download and install Ollama for open-source LLMs: https://ollama.com/
-6. Create a .env file in project root with keys: OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
-7. Create keys/tokens and set to secret key values in .env
+6. Download and install Ollama for open-source LLMs: https://ollama.com/
+7. Create a .env file in project root with keys: OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_API_KEY, DEEPSEEK_API_KEY, HF_TOKEN, LLAMA_CLOUD_API_KEY, etc.
+8. Create keys/tokens and set to secret key values in .env
    - OpenAI API for GPT4o: https://platform.openai.com/settings/organization/api-keys
    - Google AI for Gemini API: https://ai.google.dev/gemini-api/docs
    - Anthropic for Claude Sonnet: https://console.anthropic.com/settings/keys
    - DeepSeek: https://platform.deepseek.com/api_keys
    - HuggingFace: https://huggingface.co/settings/tokens
    - LlamaCloud: Go to https://cloud.llamaindex.ai/ then API Keys
-8. Activate environment:
+9. Activate environment:
 
    `conda activate llms-eng`
 
-9. Verify correct python version is being used, e.g. 3.11.11:
+10. Verify correct python version is being used, e.g. 3.11.11:
 
    `python --version`
 
-10. Open Jupyter environment:
+11. Open Jupyter environment:
 
     `jupyter lab`
 
