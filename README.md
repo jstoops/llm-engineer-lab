@@ -170,11 +170,15 @@ Steps:
    - DeepSeek: https://platform.deepseek.com/api_keys
    - HuggingFace: https://huggingface.co/settings/tokens
    - LlamaCloud: Go to https://cloud.llamaindex.ai/ then API Keys
-9. Activate environment:
+9.  Check name(s) of available environments:
+
+   `conda info --envs`
+   
+11. Activate environment:
 
    `conda activate llms-eng`
 
-10. Verify correct python version is being used, e.g. 3.11.11:
+11. Verify correct python version is being used, e.g. 3.11.11:
 
    `python --version`
 
